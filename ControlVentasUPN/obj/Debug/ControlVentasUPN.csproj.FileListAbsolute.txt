@@ -1,0 +1,11 @@
+C:\Users\piero\source\repos\ControlVentasUPN\ControlVentasUPN\bin\Debug\ControlVentasUPN.exe.config
+C:\Users\piero\source\repos\ControlVentasUPN\ControlVentasUPN\bin\Debug\ControlVentasUPN.exe
+C:\Users\piero\source\repos\ControlVentasUPN\ControlVentasUPN\bin\Debug\ControlVentasUPN.pdb
+C:\Users\piero\source\repos\ControlVentasUPN\ControlVentasUPN\obj\Debug\ControlVentasUPN.csproj.AssemblyReference.cache
+C:\Users\piero\source\repos\ControlVentasUPN\ControlVentasUPN\obj\Debug\ControlVentasUPN.csproj.SuggestedBindingRedirects.cache
+C:\Users\piero\source\repos\ControlVentasUPN\ControlVentasUPN\obj\Debug\ControlVentasUPN.Vista.RegistroVenta.resources
+C:\Users\piero\source\repos\ControlVentasUPN\ControlVentasUPN\obj\Debug\ControlVentasUPN.csproj.GenerateResource.cache
+C:\Users\piero\source\repos\ControlVentasUPN\ControlVentasUPN\obj\Debug\ControlVentasUPN.csproj.CoreCompileInputs.cache
+C:\Users\piero\source\repos\ControlVentasUPN\ControlVentasUPN\obj\Debug\ControlVentasUPN.exe
+C:\Users\piero\source\repos\ControlVentasUPN\ControlVentasUPN\obj\Debug\ControlVentasUPN.pdb
+C:\Users\piero\source\repos\ControlVentasUPN\ControlVentasUPN\obj\Debug\ControlVentasUPN.Vista.RegistroUsuario.resources
