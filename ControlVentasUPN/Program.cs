@@ -1,4 +1,5 @@
-﻿using ControlVentasUPN.Vista;
+﻿using ControlVentasUPN.Modelo;
+using ControlVentasUPN.Vista;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -16,9 +17,11 @@ namespace ControlVentasUPN
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
 
-            RegistroUsuario formPrincipal = new RegistroUsuario();
-            
+            MenuPrincipal formPrincipal = new MenuPrincipal();
+            formPrincipal.WindowState = FormWindowState.Normal;
             Application.Run(formPrincipal);
+
+            
         }
     }
 }

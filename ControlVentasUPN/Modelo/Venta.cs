@@ -43,7 +43,7 @@ namespace ControlVentasUPN.Modelo
             double total = 0;
             foreach (var producto in Productos)
             {
-                total += producto.PrecioVenta * Productos.Count;
+                total += producto.PrecioVenta;
             }
             return total;
         }

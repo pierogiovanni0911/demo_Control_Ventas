@@ -29,6 +29,9 @@
         private void InitializeComponent()
         {
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.cboSede = new System.Windows.Forms.ComboBox();
+            this.cboTipoUsuario = new System.Windows.Forms.ComboBox();
+            this.label6 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.txtContrasenha = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
@@ -44,9 +47,6 @@
             this.btnModificar = new System.Windows.Forms.Button();
             this.btnEliminar = new System.Windows.Forms.Button();
             this.btnCancelar = new System.Windows.Forms.Button();
-            this.label6 = new System.Windows.Forms.Label();
-            this.cboTipoUsuario = new System.Windows.Forms.ComboBox();
-            this.cboSede = new System.Windows.Forms.ComboBox();
             this.nombreUsuario = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.apellidoUsuario = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.usuario = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -77,6 +77,40 @@
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Registrar Nuevo Usuario";
+            // 
+            // cboSede
+            // 
+            this.cboSede.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cboSede.FormattingEnabled = true;
+            this.cboSede.Items.AddRange(new object[] {
+            "Breña",
+            "Independencia",
+            "Surco"});
+            this.cboSede.Location = new System.Drawing.Point(134, 151);
+            this.cboSede.Name = "cboSede";
+            this.cboSede.Size = new System.Drawing.Size(100, 21);
+            this.cboSede.TabIndex = 12;
+            // 
+            // cboTipoUsuario
+            // 
+            this.cboTipoUsuario.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cboTipoUsuario.FormattingEnabled = true;
+            this.cboTipoUsuario.Items.AddRange(new object[] {
+            "Administrador",
+            "Vendedor"});
+            this.cboTipoUsuario.Location = new System.Drawing.Point(10, 151);
+            this.cboTipoUsuario.Name = "cboTipoUsuario";
+            this.cboTipoUsuario.Size = new System.Drawing.Size(100, 21);
+            this.cboTipoUsuario.TabIndex = 11;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(131, 134);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(32, 13);
+            this.label6.TabIndex = 10;
+            this.label6.Text = "Sede";
             // 
             // label5
             // 
@@ -212,75 +246,35 @@
             this.btnCancelar.Text = "Cancelar";
             this.btnCancelar.UseVisualStyleBackColor = true;
             // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(131, 134);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(32, 13);
-            this.label6.TabIndex = 10;
-            this.label6.Text = "Sede";
-            // 
-            // cboTipoUsuario
-            // 
-            this.cboTipoUsuario.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cboTipoUsuario.FormattingEnabled = true;
-            this.cboTipoUsuario.Items.AddRange(new object[] {
-            "Administrador",
-            "Vendedor"});
-            this.cboTipoUsuario.Location = new System.Drawing.Point(10, 151);
-            this.cboTipoUsuario.Name = "cboTipoUsuario";
-            this.cboTipoUsuario.Size = new System.Drawing.Size(100, 21);
-            this.cboTipoUsuario.TabIndex = 11;
-            // 
-            // cboSede
-            // 
-            this.cboSede.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cboSede.FormattingEnabled = true;
-            this.cboSede.Items.AddRange(new object[] {
-            "Breña",
-            "Independencia",
-            "Surco"});
-            this.cboSede.Location = new System.Drawing.Point(134, 151);
-            this.cboSede.Name = "cboSede";
-            this.cboSede.Size = new System.Drawing.Size(100, 21);
-            this.cboSede.TabIndex = 12;
-            // 
             // nombreUsuario
             // 
             this.nombreUsuario.HeaderText = "Nombre";
             this.nombreUsuario.Name = "nombreUsuario";
-            this.nombreUsuario.ReadOnly = true;
             // 
             // apellidoUsuario
             // 
             this.apellidoUsuario.HeaderText = "Apellidos";
             this.apellidoUsuario.Name = "apellidoUsuario";
-            this.apellidoUsuario.ReadOnly = true;
             // 
             // usuario
             // 
             this.usuario.HeaderText = "Usuario";
             this.usuario.Name = "usuario";
-            this.usuario.ReadOnly = true;
             // 
             // contrasenhaUsuario
             // 
             this.contrasenhaUsuario.HeaderText = "Contraseña";
             this.contrasenhaUsuario.Name = "contrasenhaUsuario";
-            this.contrasenhaUsuario.ReadOnly = true;
             // 
             // privilegiosUsuario
             // 
             this.privilegiosUsuario.HeaderText = "Privilegios";
             this.privilegiosUsuario.Name = "privilegiosUsuario";
-            this.privilegiosUsuario.ReadOnly = true;
             // 
             // sede
             // 
             this.sede.HeaderText = "Sede";
             this.sede.Name = "sede";
-            this.sede.ReadOnly = true;
             // 
             // RegistroUsuario
             // 

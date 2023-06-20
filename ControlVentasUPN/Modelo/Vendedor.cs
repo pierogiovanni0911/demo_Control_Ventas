@@ -12,6 +12,7 @@ namespace ControlVentasUPN.Modelo
         private string nombre;
         private string apellido;
         private List<Venta> ventas;
+        private double montoVentasTotal;
         private double comision;
         private double sueldoBase;
         private double sueldoTotal;
@@ -21,13 +22,14 @@ namespace ControlVentasUPN.Modelo
 
         public Vendedor() { }
 
-        public Vendedor(int idVendedor, string nombre, string apellido, List<Venta> ventas, double comision, double sueldoBase, 
+        public Vendedor(int idVendedor, string nombre, string apellido, List<Venta> ventas, double montoVentasTotal, double comision, double sueldoBase, 
             double sueldoTotal, double bono, DateTime fechaContratacion, string sede)
         {
             this.IdVendedor = idVendedor;
             this.Nombre = nombre;
             this.Apellido= apellido;
             this.Ventas = new List<Venta>();
+            this.MontoVentasTotal = montoVentasTotal;
             this.Comision = comision;
             this.SueldoBase = sueldoBase;
             this.SueldoTotal = sueldoTotal;
@@ -45,6 +47,8 @@ namespace ControlVentasUPN.Modelo
         public DateTime FechaContratacion { get => fechaContratacion; set => fechaContratacion = value; }
         public string Sede { get => sede; set => sede = value; }
         public double SueldoBase { get => sueldoBase; set => sueldoBase = value; }
+        public double MontoVentasTotal { get => montoVentasTotal; set => montoVentasTotal = value; }
         internal List<Venta> Ventas { get => ventas; set => ventas = value; }
+
     }
 }
