@@ -17,7 +17,7 @@ namespace ControlVentasUPN
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
 
-            MenuPrincipal formPrincipal = new MenuPrincipal();
+            InicioSesion formPrincipal = new InicioSesion();
             formPrincipal.WindowState = FormWindowState.Normal;
             Application.Run(formPrincipal);
 

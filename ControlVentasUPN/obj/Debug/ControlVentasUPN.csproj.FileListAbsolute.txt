@@ -29,3 +29,13 @@ C:\Users\piero\source\repos\ControlVentasUPN\ControlVentasUPN\bin\Debug\System.R
 C:\Users\piero\source\repos\ControlVentasUPN\ControlVentasUPN\bin\Debug\System.Threading.Tasks.Extensions.xml
 C:\Users\piero\source\repos\ControlVentasUPN\ControlVentasUPN\obj\Debug\ControlVentasUPN.csproj.CopyComplete
 C:\Users\piero\source\repos\ControlVentasUPN\ControlVentasUPN\obj\Debug\ControlVentasUPN.Properties.Resources.resources
+C:\Users\piero\source\repos\ControlVentasUPN\ControlVentasUPN\obj\Debug\ControlVentasUPN.Vista.ConsultarVenta.resources
+C:\Users\piero\source\repos\ControlVentasUPN\ControlVentasUPN\bin\Debug\LiveCharts.dll
+C:\Users\piero\source\repos\ControlVentasUPN\ControlVentasUPN\bin\Debug\LiveCharts.WinForms.dll
+C:\Users\piero\source\repos\ControlVentasUPN\ControlVentasUPN\bin\Debug\LiveCharts.Wpf.dll
+C:\Users\piero\source\repos\ControlVentasUPN\ControlVentasUPN\bin\Debug\LiveCharts.pdb
+C:\Users\piero\source\repos\ControlVentasUPN\ControlVentasUPN\bin\Debug\LiveCharts.xml
+C:\Users\piero\source\repos\ControlVentasUPN\ControlVentasUPN\bin\Debug\LiveCharts.WinForms.pdb
+C:\Users\piero\source\repos\ControlVentasUPN\ControlVentasUPN\bin\Debug\LiveCharts.WinForms.xml
+C:\Users\piero\source\repos\ControlVentasUPN\ControlVentasUPN\bin\Debug\LiveCharts.Wpf.pdb
+C:\Users\piero\source\repos\ControlVentasUPN\ControlVentasUPN\bin\Debug\LiveCharts.Wpf.xml

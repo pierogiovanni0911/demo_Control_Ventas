@@ -1,0 +1,10 @@
+IdVenta,IdVendedor,DocumentoCliente,NombreCl,ApellidoPaternoCl,ApellidoMaternoCl,FechaVenta,PrecioTotal
+2,0,77816153,Piero,Guizado,Vargas,06/27/2023 01:01:41,787.5
+2,0,77816153,Jose,w,s,06/27/2023 04:13:29,220.5
+3,0,11111111,Miguel,Paredes,Medoza,06/27/2023 04:14:07,336
+4,0,2222222,Sofia,Molina,Castro,06/27/2023 04:15:17,588
+2,1,1111111,Miguel,s,s,06/27/2023 04:17:35,770
+3,1,22222,Sebastian,Moreno,Vargas,06/27/2023 04:18:45,350
+2,1,1111111,Jose,Leguia,Moreno,06/27/2023 05:17:40,220.5
+2,1,77816153,Nancy,Mosquera,Aguilar,06/27/2023 05:37:52,567
+2,0,10776353,Miguel,Paredes,Lomas,06/27/2023 08:37:29,630

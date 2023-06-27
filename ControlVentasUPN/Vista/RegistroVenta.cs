@@ -1,9 +1,11 @@
-﻿using ControlVentasUPN.Modelo;
+﻿using ControlVentasUPN.Controlador;
+using ControlVentasUPN.Modelo;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -13,37 +15,93 @@ namespace ControlVentasUPN.Vista
 {
     public partial class RegistroVenta : Form
     {
-        private List<Producto> carrito;
+        ProductoController productoController;
+        VentaController ventaController;
+        Venta ventaActual;
+
         public RegistroVenta()
         {
             InitializeComponent();
-            carrito = new List<Producto>();
+            productoController = new ProductoController();
+            ventaController = new VentaController();
+            ventaActual = new Venta();
+        }
+
+        private void btnRealizarVenta_Click(object sender, EventArgs e)
+        {
+            
+            // Obtener datos de venta
+            ventaActual.DocumentoCliente = txtDocumento.Text;
+            ventaActual.NombreCl = txtNombreCl.Text;
+            ventaActual.ApellidoPaternoCl = txtApellidoPaCl.Text;
+            ventaActual.ApellidoMaternoCl = txtApellidoMaCl.Text;
+            ventaActual.FechaVenta = DateTime.Now;
+            ventaActual.PrecioTotal = ventaController.CalcularMontoTotalCarrito();
+
+            if(ventaController.Carrito.Count == 0)
+            {
+                MessageBox.Show("Carrito de ventas vacío. Agregue productos.", "Error");
+                return;
+            }
+
+            // Guardar venta en archivo CSV
+            ventaController.GuardarVenta(ventaActual);
+
+            // Limpiar carrito y reinicar venta actual
+            ventaController.Carrito.Clear();
+            dgvCarritoProd.Rows.Clear();
+            txtMontoTotal.Text = "0.00";
+            limpiarCamposCliente();
+            limpiarCamposProducto();
+
+            MessageBox.Show("Venta guardada con éxito");
+        }
+
+        private void btnAgregarProd_Click(object sender, EventArgs e)
+        {
+            string sku = txtSkuProd.Text;
+            string cantidadText = txtCantidadProd.Text;
+            int cantidadVendida;
+
+            if(string.IsNullOrEmpty(sku) || string.IsNullOrEmpty(cantidadText))
+            {
+                MessageBox.Show("Ingrese Sku y cantidad del producto", "Error");
+                return;
+            }
+
+            if(!int.TryParse(cantidadText, out cantidadVendida))
+            {
+                MessageBox.Show("La cantidad ingresada no es válida", "Error");
+                return;
+            }
+
+            ventaController.AgregarProductoAlCarrito(sku, cantidadVendida);
+            txtMontoTotal.Text = ventaController.CalcularMontoTotalCarrito().ToString();
+            ActualizarDataGridViewCarrito();
+            
         }
 
         private void btnBuscarProdGen_Click(object sender, EventArgs e)
         {
             string nombreBusqueda = txtNombreProdGeneral.Text;
-            List<Producto> resultados = BuscarProductos(nombreBusqueda);
+            List<Producto> resultados = productoController.BuscarProductoGenPorNombre(nombreBusqueda);
             ActualizarDataGridView(resultados);
         }
 
-        private List<Producto> BuscarProductos(string nombreBusqueda)
+        private void btnBuscarProdCarrito_Click(object sender, EventArgs e)
         {
-            CsvProducto lectorCsv = new CsvProducto();
-            string rutaArchivo = "C:\\Users\\piero\\source\\repos\\ControlVentasUPN\\ControlVentasUPN\\Resources\\adidas_usa.csv";
-            List<Producto> productos = lectorCsv.LeerProductosDesdeCsv(rutaArchivo);
+            string sku = txtSkuProd.Text;
+            Producto productoEncontrado = productoController.BuscarProductoPorSku(sku);
 
-            List<Producto> resultados = new List<Producto>();
-
-            foreach (Producto producto in productos)
+            if (productoEncontrado != null)
             {
-                if (producto.NombreProducto.Contains(nombreBusqueda))
-                {
-                    resultados.Add(producto);
-                }
+                txtNombreProd.Text = productoEncontrado.NombreProducto;
+                txtPrecioProd.Text = productoEncontrado.PrecioVenta.ToString();
             }
-
-            return resultados;
+            else
+            {
+                MessageBox.Show("Producto no encontrado", "Error");
+            }
         }
 
         private void ActualizarDataGridView(List<Producto> resultados)
@@ -55,92 +113,60 @@ namespace ControlVentasUPN.Vista
                 dgvProductosGeneral.Rows.Add(
                     producto.Index,
                     producto.NombreProducto,
-                    producto.Url,
                     producto.Sku,
                     producto.PrecioVenta,
-                    producto.Moneda,
                     producto.Disponibilidad,
                     producto.Color,
                     producto.Categoria,
+                    producto.Url,
                     producto.Imagenes,
                     producto.CalificacionPromedio,
                     producto.CantidadCalificaciones
                     );
             }
         }
-
-        private void btnBuscarProdCarrito_Click(object sender, EventArgs e)
+        private void ActualizarDataGridViewCarrito()
         {
-            string sku = txtSkuProd.Text;
-            Producto productoEncontrado = BuscarProductoPorSku(sku);
+            dgvCarritoProd.Rows.Clear();
 
-            if (productoEncontrado != null)
+            foreach(Producto producto in ventaController.Carrito)
             {
-                txtNombreProd.Text = productoEncontrado.NombreProducto;
-                txtPrecioProd.Text = productoEncontrado.PrecioVenta.ToString();
-            }
-            else
-            {
-                MessageBox.Show("Producto no encontrado");
-            }
-        }
-
-        private Producto BuscarProductoPorSku(string sku)
-        {
-            CsvProducto lectorCsv = new CsvProducto();
-            string rutaArchivo = "C:\\Users\\piero\\source\\repos\\ControlVentasUPN\\ControlVentasUPN\\Resources\\adidas_usa.csv";
-            List<Producto> productos = lectorCsv.LeerProductosDesdeCsv(rutaArchivo);
-
-            foreach (Producto producto in productos)
-            {
-                if (producto.Sku == sku)
-                {
-                    return producto;
-                }
-            }
-
-            return null;
-        }
-
-        private void btnAgregarProd_Click(object sender, EventArgs e)
-        {
-            string sku = txtSkuProd.Text;
-            int cantidadVendida = int.Parse(txtCantidadProd.Text);
-
-            Producto productoEncontrado = BuscarProductoPorSku(sku);
-
-            if(productoEncontrado != null)
-            {
-                double montoTotal = productoEncontrado.PrecioVenta * cantidadVendida;
-
-                // Agregando producto a carrito
-                Producto productoCarrito = new Producto(productoEncontrado.Index, productoEncontrado.Url,
-                    productoEncontrado.NombreProducto, productoEncontrado.Sku, productoEncontrado.PrecioVenta,
-                    productoEncontrado.Moneda, productoEncontrado.Disponibilidad, productoEncontrado.Color,
-                    productoEncontrado.Categoria, productoEncontrado.Imagenes, productoEncontrado.CalificacionPromedio,
-                    productoEncontrado.CantidadCalificaciones);
-                carrito.Add(productoCarrito);
-
-                // Actualizar monto total
-                double montoTotalCarrito = 0;
-                foreach(Producto producto in carrito)
-                {
-                    montoTotalCarrito += producto.PrecioVenta * cantidadVendida;
-                }
-                txtMontoTotal.Text = montoTotalCarrito.ToString();
-
-                // Mostrar productos en dgv
                 dgvCarritoProd.Rows.Add(
-                    productoCarrito.NombreProducto,
-                    productoCarrito.Disponibilidad,
-                    cantidadVendida,
-                    productoCarrito.PrecioVenta
+                    producto.NombreProducto,
+                    producto.Disponibilidad,
+                    producto.CantidadVendida,
+                    producto.PrecioVenta,
+                    producto.calcularSubTotalProducto()
                     );
             }
-            else
-            {
-                MessageBox.Show("Producto no encontrado");
-            }
+        }
+
+        private void btnLimpiarCarrito_Click(object sender, EventArgs e)
+        {
+            limpiarCamposProducto();
+        }
+
+        private void btnLimpiarDatosCl_Click(object sender, EventArgs e)
+        {
+            limpiarCamposCliente();
+        }
+
+        private void limpiarCamposCliente()
+        {
+            txtDocumento.Text = "";
+            txtNombreCl.Text = "";
+            txtApellidoPaCl.Text = "";
+            txtApellidoMaCl.Text = "";
+        }
+
+        private void limpiarCamposProducto()
+        {
+            txtSkuProd.Text = "";
+            txtNombreProd.Text = "";
+            txtCantidadProd.Text = "";
+            txtPrecioProd.Text = "";
+            dgvCarritoProd.Rows.Clear();
+            ventaActual.Productos.Clear();
         }
     }
 }
