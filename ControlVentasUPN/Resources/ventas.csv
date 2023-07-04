@@ -8,3 +8,5 @@ IdVenta,IdVendedor,DocumentoCliente,NombreCl,ApellidoPaternoCl,ApellidoMaternoCl
 2,1,1111111,Jose,Leguia,Moreno,06/27/2023 05:17:40,220.5
 2,1,77816153,Nancy,Mosquera,Aguilar,06/27/2023 05:37:52,567
 2,0,10776353,Miguel,Paredes,Lomas,06/27/2023 08:37:29,630
+2,0,77816153,Jose,Aguilar Perez,Molina,07/03/2023 20:16:28,661.5
+2,0,77816153,Milagros,Quispe,Rosas,07/03/2023 20:23:03,196

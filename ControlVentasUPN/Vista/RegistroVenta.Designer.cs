@@ -75,6 +75,7 @@
             this.calificacionPromedioProdGen = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.cantidadCalifProdGen = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btnRealizarVenta = new System.Windows.Forms.Button();
+            this.btnFinalizar = new System.Windows.Forms.Button();
             this.groupBoxCliente.SuspendLayout();
             this.groupBoxProductos.SuspendLayout();
             this.groupBox1.SuspendLayout();
@@ -492,11 +493,22 @@
             this.btnRealizarVenta.UseVisualStyleBackColor = true;
             this.btnRealizarVenta.Click += new System.EventHandler(this.btnRealizarVenta_Click);
             // 
+            // btnFinalizar
+            // 
+            this.btnFinalizar.Location = new System.Drawing.Point(675, 586);
+            this.btnFinalizar.Name = "btnFinalizar";
+            this.btnFinalizar.Size = new System.Drawing.Size(121, 23);
+            this.btnFinalizar.TabIndex = 4;
+            this.btnFinalizar.Text = "Finalizar";
+            this.btnFinalizar.UseVisualStyleBackColor = true;
+            this.btnFinalizar.Click += new System.EventHandler(this.btnFinalizar_Click);
+            // 
             // RegistroVenta
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1428, 633);
+            this.Controls.Add(this.btnFinalizar);
             this.Controls.Add(this.btnRealizarVenta);
             this.Controls.Add(this.groupBoxBuscar);
             this.Controls.Add(this.groupBoxProductos);
@@ -565,5 +577,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn calificacionPromedioProdGen;
         private System.Windows.Forms.DataGridViewTextBoxColumn cantidadCalifProdGen;
         private System.Windows.Forms.Button btnLimpiarCarrito;
+        private System.Windows.Forms.Button btnFinalizar;
     }
 }

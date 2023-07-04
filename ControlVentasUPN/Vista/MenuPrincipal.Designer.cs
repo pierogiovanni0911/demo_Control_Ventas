@@ -28,9 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea2 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend2 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series2 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
             this.ayudaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.acercaDelProgramaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.salirToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -40,8 +40,6 @@
             this.ventasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.registrarVentaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.consultarVentasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.usuariosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.gestionarUsuariosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.txtTotalCantidadVentas = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
@@ -84,6 +82,7 @@
             this.acercaDelProgramaToolStripMenuItem.Name = "acercaDelProgramaToolStripMenuItem";
             this.acercaDelProgramaToolStripMenuItem.Size = new System.Drawing.Size(184, 22);
             this.acercaDelProgramaToolStripMenuItem.Text = "Acerca del Programa";
+            this.acercaDelProgramaToolStripMenuItem.Click += new System.EventHandler(this.acercaDelProgramaToolStripMenuItem_Click);
             // 
             // salirToolStripMenuItem
             // 
@@ -105,14 +104,13 @@
             // 
             this.cerrarToolStripMenuItem.Name = "cerrarToolStripMenuItem";
             this.cerrarToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.cerrarToolStripMenuItem.Text = "Cerrar Sesión y Salir ";
+            this.cerrarToolStripMenuItem.Text = "Cerrar Programa ";
             this.cerrarToolStripMenuItem.Click += new System.EventHandler(this.cerrarToolStripMenuItem_Click);
             // 
             // menuStrip1
             // 
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.ventasToolStripMenuItem,
-            this.usuariosToolStripMenuItem,
             this.ayudaToolStripMenuItem,
             this.salirToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
@@ -133,34 +131,20 @@
             // registrarVentaToolStripMenuItem
             // 
             this.registrarVentaToolStripMenuItem.Name = "registrarVentaToolStripMenuItem";
-            this.registrarVentaToolStripMenuItem.Size = new System.Drawing.Size(162, 22);
+            this.registrarVentaToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.registrarVentaToolStripMenuItem.Text = "Registrar Venta";
             this.registrarVentaToolStripMenuItem.Click += new System.EventHandler(this.registrarVentaToolStripMenuItem_Click);
             // 
             // consultarVentasToolStripMenuItem
             // 
             this.consultarVentasToolStripMenuItem.Name = "consultarVentasToolStripMenuItem";
-            this.consultarVentasToolStripMenuItem.Size = new System.Drawing.Size(162, 22);
+            this.consultarVentasToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.consultarVentasToolStripMenuItem.Text = "Consultar Ventas";
             this.consultarVentasToolStripMenuItem.Click += new System.EventHandler(this.consultarVentasToolStripMenuItem_Click);
             // 
-            // usuariosToolStripMenuItem
-            // 
-            this.usuariosToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.gestionarUsuariosToolStripMenuItem});
-            this.usuariosToolStripMenuItem.Name = "usuariosToolStripMenuItem";
-            this.usuariosToolStripMenuItem.Size = new System.Drawing.Size(64, 20);
-            this.usuariosToolStripMenuItem.Text = "Usuarios";
-            // 
-            // gestionarUsuariosToolStripMenuItem
-            // 
-            this.gestionarUsuariosToolStripMenuItem.Name = "gestionarUsuariosToolStripMenuItem";
-            this.gestionarUsuariosToolStripMenuItem.Size = new System.Drawing.Size(172, 22);
-            this.gestionarUsuariosToolStripMenuItem.Text = "Gestionar Usuarios";
-            this.gestionarUsuariosToolStripMenuItem.Click += new System.EventHandler(this.gestionarUsuariosToolStripMenuItem_Click);
-            // 
             // txtTotalCantidadVentas
             // 
+            this.txtTotalCantidadVentas.Cursor = System.Windows.Forms.Cursors.Default;
             this.txtTotalCantidadVentas.Location = new System.Drawing.Point(404, 53);
             this.txtTotalCantidadVentas.Name = "txtTotalCantidadVentas";
             this.txtTotalCantidadVentas.ReadOnly = true;
@@ -187,6 +171,7 @@
             // 
             // txtSueldoBase
             // 
+            this.txtSueldoBase.Cursor = System.Windows.Forms.Cursors.Default;
             this.txtSueldoBase.Location = new System.Drawing.Point(20, 113);
             this.txtSueldoBase.Name = "txtSueldoBase";
             this.txtSueldoBase.ReadOnly = true;
@@ -204,6 +189,7 @@
             // 
             // txtComisiones
             // 
+            this.txtComisiones.Cursor = System.Windows.Forms.Cursors.Default;
             this.txtComisiones.Location = new System.Drawing.Point(151, 113);
             this.txtComisiones.Name = "txtComisiones";
             this.txtComisiones.ReadOnly = true;
@@ -221,6 +207,7 @@
             // 
             // txtBono
             // 
+            this.txtBono.Cursor = System.Windows.Forms.Cursors.Default;
             this.txtBono.Location = new System.Drawing.Point(282, 113);
             this.txtBono.Name = "txtBono";
             this.txtBono.ReadOnly = true;
@@ -238,6 +225,7 @@
             // 
             // txtMontoVentas
             // 
+            this.txtMontoVentas.Cursor = System.Windows.Forms.Cursors.Default;
             this.txtMontoVentas.Location = new System.Drawing.Point(543, 53);
             this.txtMontoVentas.Name = "txtMontoVentas";
             this.txtMontoVentas.ReadOnly = true;
@@ -284,6 +272,7 @@
             // 
             // txtFechaContrato
             // 
+            this.txtFechaContrato.Cursor = System.Windows.Forms.Cursors.Default;
             this.txtFechaContrato.Location = new System.Drawing.Point(543, 113);
             this.txtFechaContrato.Name = "txtFechaContrato";
             this.txtFechaContrato.ReadOnly = true;
@@ -301,6 +290,7 @@
             // 
             // txtSueldoTotal
             // 
+            this.txtSueldoTotal.Cursor = System.Windows.Forms.Cursors.Default;
             this.txtSueldoTotal.Location = new System.Drawing.Point(408, 113);
             this.txtSueldoTotal.Name = "txtSueldoTotal";
             this.txtSueldoTotal.ReadOnly = true;
@@ -318,6 +308,7 @@
             // 
             // txtApellidoVendedor
             // 
+            this.txtApellidoVendedor.Cursor = System.Windows.Forms.Cursors.Default;
             this.txtApellidoVendedor.Location = new System.Drawing.Point(271, 53);
             this.txtApellidoVendedor.Name = "txtApellidoVendedor";
             this.txtApellidoVendedor.ReadOnly = true;
@@ -335,6 +326,7 @@
             // 
             // txtNombreVendedor
             // 
+            this.txtNombreVendedor.Cursor = System.Windows.Forms.Cursors.Default;
             this.txtNombreVendedor.Location = new System.Drawing.Point(147, 53);
             this.txtNombreVendedor.Name = "txtNombreVendedor";
             this.txtNombreVendedor.ReadOnly = true;
@@ -352,6 +344,7 @@
             // 
             // txtIdVendedor
             // 
+            this.txtIdVendedor.Cursor = System.Windows.Forms.Cursors.Default;
             this.txtIdVendedor.Location = new System.Drawing.Point(22, 53);
             this.txtIdVendedor.Name = "txtIdVendedor";
             this.txtIdVendedor.ReadOnly = true;
@@ -360,17 +353,17 @@
             // 
             // chart1
             // 
-            chartArea2.Name = "ChartArea1";
-            this.chart1.ChartAreas.Add(chartArea2);
-            legend2.Name = "Legend1";
-            this.chart1.Legends.Add(legend2);
+            chartArea1.Name = "ChartArea1";
+            this.chart1.ChartAreas.Add(chartArea1);
+            legend1.Name = "Legend1";
+            this.chart1.Legends.Add(legend1);
             this.chart1.Location = new System.Drawing.Point(17, 236);
             this.chart1.Name = "chart1";
-            series2.ChartArea = "ChartArea1";
-            series2.Legend = "Legend1";
-            series2.Name = "Series1";
-            this.chart1.Series.Add(series2);
-            this.chart1.Size = new System.Drawing.Size(469, 323);
+            series1.ChartArea = "ChartArea1";
+            series1.Legend = "Legend1";
+            series1.Name = "Series1";
+            this.chart1.Series.Add(series1);
+            this.chart1.Size = new System.Drawing.Size(438, 323);
             this.chart1.TabIndex = 13;
             this.chart1.Text = "chart1";
             // 
@@ -425,9 +418,7 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.TextBox txtMontoVentas;
         private System.Windows.Forms.ToolStripMenuItem ventasToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem usuariosToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem registrarVentaToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem gestionarUsuariosToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem consultarVentasToolStripMenuItem;
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.Label label6;

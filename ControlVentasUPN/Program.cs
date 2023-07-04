@@ -20,8 +20,9 @@ namespace ControlVentasUPN
             InicioSesion formPrincipal = new InicioSesion();
             formPrincipal.WindowState = FormWindowState.Normal;
             Application.Run(formPrincipal);
+            int cantidadVentanasAbiertas = Application.OpenForms.Count;
+            Console.WriteLine(cantidadVentanasAbiertas);
 
-            
         }
     }
 }

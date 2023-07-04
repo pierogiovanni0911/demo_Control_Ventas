@@ -8,7 +8,6 @@ C:\Users\piero\source\repos\ControlVentasUPN\ControlVentasUPN\obj\Debug\ControlV
 C:\Users\piero\source\repos\ControlVentasUPN\ControlVentasUPN\obj\Debug\ControlVentasUPN.csproj.CoreCompileInputs.cache
 C:\Users\piero\source\repos\ControlVentasUPN\ControlVentasUPN\obj\Debug\ControlVentasUPN.exe
 C:\Users\piero\source\repos\ControlVentasUPN\ControlVentasUPN\obj\Debug\ControlVentasUPN.pdb
-C:\Users\piero\source\repos\ControlVentasUPN\ControlVentasUPN\obj\Debug\ControlVentasUPN.Vista.RegistroUsuario.resources
 C:\Users\piero\source\repos\ControlVentasUPN\ControlVentasUPN\obj\Debug\ControlVentasUPN.Vista.InicioSesion.resources
 C:\Users\piero\source\repos\ControlVentasUPN\ControlVentasUPN\obj\Debug\ControlVentasUPN.Vista.MenuPrincipal.resources
 C:\Users\piero\source\repos\ControlVentasUPN\ControlVentasUPN\bin\Debug\CsvHelper.dll
@@ -39,3 +38,4 @@ C:\Users\piero\source\repos\ControlVentasUPN\ControlVentasUPN\bin\Debug\LiveChar
 C:\Users\piero\source\repos\ControlVentasUPN\ControlVentasUPN\bin\Debug\LiveCharts.WinForms.xml
 C:\Users\piero\source\repos\ControlVentasUPN\ControlVentasUPN\bin\Debug\LiveCharts.Wpf.pdb
 C:\Users\piero\source\repos\ControlVentasUPN\ControlVentasUPN\bin\Debug\LiveCharts.Wpf.xml
+C:\Users\piero\source\repos\ControlVentasUPN\ControlVentasUPN\obj\Debug\ControlVentasUPN.Vista.AcercaDe.resources

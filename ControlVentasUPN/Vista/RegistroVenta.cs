@@ -18,13 +18,16 @@ namespace ControlVentasUPN.Vista
         ProductoController productoController;
         VentaController ventaController;
         Venta ventaActual;
+        private MenuPrincipal menuPrincipal;
 
-        public RegistroVenta()
+        public RegistroVenta(MenuPrincipal menuPrincipal)
         {
             InitializeComponent();
             productoController = new ProductoController();
             ventaController = new VentaController();
             ventaActual = new Venta();
+            this.menuPrincipal = menuPrincipal;
+            this.FormClosing += RegistroVenta_FormClosing;
         }
 
         private void btnRealizarVenta_Click(object sender, EventArgs e)
@@ -167,6 +170,17 @@ namespace ControlVentasUPN.Vista
             txtPrecioProd.Text = "";
             dgvCarritoProd.Rows.Clear();
             ventaActual.Productos.Clear();
+        }
+
+        private void btnFinalizar_Click(object sender, EventArgs e)
+        {
+            this.Close();
+            menuPrincipal.ActualizarEstadisticasVendedor();
+        }
+
+        private void RegistroVenta_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            menuPrincipal.ActualizarEstadisticasVendedor();
         }
     }
 }

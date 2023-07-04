@@ -28,19 +28,13 @@ namespace ControlVentasUPN.Vista
 
         private void cerrarToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            Application.Exit();
+            this.Close();
         }
 
         private void registrarVentaToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            RegistroVenta formRegistroVenta = new RegistroVenta();
+            RegistroVenta formRegistroVenta = new RegistroVenta(this);
             formRegistroVenta.ShowDialog();
-        }
-
-        private void gestionarUsuariosToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            RegistroUsuario formRegistroUsuario = new RegistroUsuario();
-            formRegistroUsuario.ShowDialog();
         }
 
         private void consultarVentasToolStripMenuItem_Click(object sender, EventArgs e)
@@ -49,12 +43,18 @@ namespace ControlVentasUPN.Vista
             formConsultarVentas.ShowDialog();
         }
 
+        private void acercaDelProgramaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            AcercaDe formAcercaDe = new AcercaDe();
+            formAcercaDe.ShowDialog();
+        }
+
         private void cerrarSesiónToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            this.Close();
+            this.Hide();
             InicioSesion formInicioSesion = new InicioSesion();
-            formInicioSesion.Show();
-            
+            formInicioSesion.ShowDialog();
+            this.Close();
         }
 
         public void ActualizarEstadisticasVendedor()
@@ -93,5 +93,7 @@ namespace ControlVentasUPN.Vista
             // Agregar la serie al gráfico
             chart1.Series.Add(serieMontos);
         }
+
+        
     }
 }

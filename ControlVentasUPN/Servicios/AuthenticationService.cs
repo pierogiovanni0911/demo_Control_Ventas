@@ -17,12 +17,15 @@ namespace ControlVentasUPN.Servicios
         {
             usuarios = new List<Usuario>();
             usuarios.Add(new Usuario(0, "piero0911", "123"));
-            usuarios.Add(new Usuario(1, "andres9965", "123456"));
+            usuarios.Add(new Usuario(1, "aaron123", "123"));
+            usuarios.Add(new Usuario(2, "carlos123", "123"));
+            usuarios.Add(new Usuario(3, "dania123", "123"));
 
             vendedores = new List<Vendedor>();
-            vendedores.Add(new Vendedor(0, "Piero", "Vargas", new List<Venta>(), 0.0, 0.0, 1025.0, 1025.0, 0.0, DateTime.Now, "Breña"));
-            vendedores.Add(new Vendedor(1, "Andres", "Pino", new List<Venta>(), 0.0, 0.0, 1025.0, 1025.0, 0.0, DateTime.Now, "Surco"));
-
+            vendedores.Add(new Vendedor(0, "Piero", "Vargas", new List<Venta>(), 0.0, 0.0, 1025.0, 1025.0, 0.0, new DateTime(2023, 6, 20), "Breña"));
+            vendedores.Add(new Vendedor(1, "Aaron", "Diaz", new List<Venta>(), 0.0, 0.0, 1025.0, 1025.0, 0.0, new DateTime(2023, 4, 9), "Surco"));
+            vendedores.Add(new Vendedor(2, "Carlos", "Dongo", new List<Venta>(), 0.0, 0.0, 1025.0, 1025.0, 0.0, new DateTime(2023, 5, 12), "Breña"));
+            vendedores.Add(new Vendedor(2, "Dania", "Chacaya", new List<Venta>(), 0.0, 0.0, 1025.0, 1025.0, 0.0, new DateTime(2023, 3, 25), "Los Olivos"));
         }
 
         public bool IniciarSesion(string username,  string password)
@@ -55,7 +58,7 @@ namespace ControlVentasUPN.Servicios
             return false;
         }
 
-        // Por el momento
+        
         public string ObtenerNombreVendedor(int idVendedor)
         {
             foreach (Vendedor vendedor in vendedores)
@@ -68,7 +71,7 @@ namespace ControlVentasUPN.Servicios
             return string.Empty;
         }
 
-        // Por el momento
+        
         public Dictionary<string, int> ObtenerVentasPorVendedor(string rutaArchivoVentas)
         {
             Dictionary<string, int> ventasVendedores = new Dictionary<string, int>();
@@ -81,6 +84,10 @@ namespace ControlVentasUPN.Servicios
 
             return ventasVendedores;
         }
+
+        
+
+        
 
     }
 }
